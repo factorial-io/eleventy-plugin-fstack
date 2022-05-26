@@ -105,26 +105,25 @@ As mentioned in the `eleventyConfig.addPlugin(fstack, USER_OPTIONS)` you have to
 ```js
 /**
  * @typedef {object} ELEVENTY_DIRECTORIES
- * @property {string} input
- * @property {string} output
- * @property {string} [includes]
- * @property {string} [layouts]
- * @property {string} [watch]
+ * @property {string} input - 11ty template path
+ * @property {string} output - 11ty build path
+ * @property {string} [includes] - 11ty includes path relativ to input
+ * @property {string} [layouts] - 11ty separate layouts path relative to input
+ * @property {string} [watch] - add more watchTargets to 11ty
  */
 
 /**
- * @typedef {object} ASSETS_PATH
- * @property {string} base
- * @property {string} css
- * @property {string} js
+ * @typedef {object} ASSETS
+ * @property {string} base - base path for assets like assets/ relative to the build folder
+ * @property {string} css - path to the css folder relative to the base
+ * @property {string} js - path to the js folder relative to the base
  */
 
 /**
  * @typedef {object} USER_OPTIONS
- * @property {string} mixManifest,
- * @property {ASSETS_PATH} [assetsPath]
- * @property {ELEVENTY_DIRECTORIES} dir
- * @property {import("@factorial/eleventy-plugin-twig").TWIG_OPTIONS} [twig] // just if u use @factorial/eleventy-plugin/twig
+ * @property {string} mixManifest - path to the mixManifest file relative to the build folder
+ * @property {ASSETS} [assets] - where to find all the assets relative to the build folder
+ * @property {ELEVENTY_DIRECTORIES} dir - 11ty folder decisions
  */
 ```
 
@@ -147,7 +146,7 @@ const USER_OPTIONS = {
     },
   },
   mixManifest: "mix-manifest.json",
-  assetsPath: {
+  assets: {
     base: "assets",
     css: "css",
     js: "js",
