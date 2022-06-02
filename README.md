@@ -113,7 +113,7 @@ As mentioned in the `eleventyConfig.addPlugin(fstack, USER_OPTIONS)` you have to
  */
 
 /**
- * @typedef {object} ASSETS_PATH
+ * @typedef {object} ASSETS
  * @property {string} base
  * @property {string} css
  * @property {string} js
@@ -122,7 +122,7 @@ As mentioned in the `eleventyConfig.addPlugin(fstack, USER_OPTIONS)` you have to
 /**
  * @typedef {object} USER_OPTIONS
  * @property {string} mixManifest,
- * @property {ASSETS_PATH} [assetsPath]
+ * @property {ASSETS} [assets]
  * @property {ELEVENTY_DIRECTORIES} dir
  * @property {import("@factorial/eleventy-plugin-twig").TWIG_OPTIONS} [twig] // just if u use @factorial/eleventy-plugin/twig
  */
@@ -147,7 +147,7 @@ const USER_OPTIONS = {
     },
   },
   mixManifest: "mix-manifest.json",
-  assetsPath: {
+  assets: {
     base: "assets",
     css: "css",
     js: "js",
